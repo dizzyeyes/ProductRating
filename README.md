@@ -1,3 +1,5 @@
+<a href="https://github.com/dizzyeyes/ProductRating">EN</a> <a href="https://github.com/dizzyeyes/ProductRating/blob/main/Readme_cn.md">CN</a> 
+
 # ProductRating
 
 For JD Plus members, after evaluating a product, JD will reward Jing beans, but at least 40 words are needed. Therefore, it is necessary to automate the generation of comments.
@@ -6,9 +8,9 @@ This project uses the FlagAI model from Zhiyuan to generate a positive or negati
 
 # Prerequisites:
 
-Download the GLM-large-ch model to "./checkpoints/GLM-large-ch/".
+Download the <a href="https://model.baai.ac.cn/model-detail/100003">GLM-large-ch</a> model files to "./checkpoints/GLM-large-ch/".
 
-Download the AltDiffusion-m9 model to "./checkpoints/AltDiffusion-m9/".
+Download the <a href="https://model.baai.ac.cn/model-detail/100078">AltDiffusion-m9</a> model files to "./checkpoints/AltDiffusion-m9/".
 
 # Steps:
 
@@ -34,3 +36,9 @@ pip install flagai
 
 # Usage
 Double click on run.bat to run.
+
+
+
+需要将<a href="https://model.baai.ac.cn/model-detail/100003">GLM-large-ch</a>模型下载到"./checkpoints/GLM-large-ch/"
+
+将<a href="https://model.baai.ac.cn/model-detail/100078">AltDiffusion-m9</a>模型下载到"./checkpoints/AltDiffusion-m9/"
