@@ -15,13 +15,14 @@ def comments_gen(title,pos=True):
     model.to(device)
 
     predictor = Predictor(model, tokenizer)
+    output = ""
     if pos:
         text = "问题：请写一个正面的购物评价，要求40字“{}”？回答：[gMASK]".format(title)
         output=predictor.predict_generate_randomsample(text, top_k=50, repetition_penalty=4.0, top_p=1.0)
     else:
         text = "问题：请写一个负面的购物评价，要求40字“{}”？回答：[gMASK]".format(title)
         output=predictor.predict_generate_randomsample(text, top_k=50, repetition_penalty=4.0, top_p=1.0)
-    
+    output = output.split("回答: ")[-1]
     return output
     
 if __name__ == '__main__':
