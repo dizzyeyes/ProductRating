@@ -38,7 +38,3 @@ pip install flagai
 Double click on run.bat to run.
 
 
-
-需要将<a href="https://model.baai.ac.cn/model-detail/100003">GLM-large-ch</a>模型下载到"./checkpoints/GLM-large-ch/"
-
-将<a href="https://model.baai.ac.cn/model-detail/100078">AltDiffusion-m9</a>模型下载到"./checkpoints/AltDiffusion-m9/"
