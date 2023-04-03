@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QListWidget, QListWidgetItem, QComboBox
+from PyQt5.QtCore import Qt
 import Comments as co
 
 class Login(QVBoxLayout):
@@ -42,7 +43,9 @@ class ListItem(QWidget):
         layout.addWidget(self.id_label)
         layout.addWidget(self.name_label)
         layout.addWidget(self.select_box)
+        layout.setAlignment(Qt.AlignLeft)  # 将对齐方式设置为左对齐
         self.setLayout(layout)
+
 
 class ListView(QVBoxLayout):
     def __init__(self, parent=None):
@@ -56,7 +59,7 @@ class ListView(QVBoxLayout):
                 "【系列自选】新年过年啦绘本系列 绘本欢乐中国年中华传统节日故事绘本阅读我们的新年",
                 "雅诗兰黛绒雾哑光唇膏420#轻奢玫情色口红化妆品礼盒护肤品套装生日礼物"]
                 
-        for i in range(1, len(titles)):
+        for i in range(0, len(titles)):
             item = ListItem(i, titles[i], parent=self.list_widget)
             list_item = QListWidgetItem(self.list_widget)
             list_item.setSizeHint(item.sizeHint())
@@ -107,7 +110,7 @@ class MainWindow(QWidget):
             statusBool = True if item_widget.select_box.currentText() == "Positive" else False
             print(f"商品名称：{title}，选中状态：{status}, {statusBool}")
             comments = self.predictor.comments_gen(title,statusBool)
-            print("\n\t评语：\n",comments)
+            print("\n评语：\n",comments)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
