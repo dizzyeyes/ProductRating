@@ -5,8 +5,8 @@
 本项目使用智源的FlagAI模型，使用商品连接中的标题，生成一段正面或者负面的评价。
 
 # 前提：
-需要将GLM-large-ch模型下载到"./checkpoints/GLM-large-ch/"
-将AltDiffusion-m9模型下载到"./checkpoints/AltDiffusion-m9/"
+需要将<a href="https://model.baai.ac.cn/model-detail/100003">GLM-large-ch</a>模型下载到"./checkpoints/GLM-large-ch/"
+将<a href="https://model.baai.ac.cn/model-detail/100078">AltDiffusion-m9</a>模型下载到"./checkpoints/AltDiffusion-m9/"
 
 # 步骤：
 
