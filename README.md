@@ -26,3 +26,6 @@
 # Requirements 
 
 pip install flagai
+
+# 使用
+双击运行 run.bat
