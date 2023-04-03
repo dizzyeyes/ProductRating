@@ -1,37 +1,36 @@
 # ProductRating
 
-对于京东plus会员，在商品评价之后会，京东会给予京豆奖励，但是需要评价字数至少40字。因此自动化的生成评价很有必要。
+For JD Plus members, after evaluating a product, JD will reward Jing beans, but at least 40 words are needed. Therefore, it is necessary to automate the generation of comments.
 
-本项目使用智源的FlagAI模型，使用商品连接中的标题，生成一段正面或者负面的评价。
+This project uses the FlagAI model from Zhiyuan to generate a positive or negative evaluation using the product title in the link.
 
-# 前提：
+# Prerequisites:
 
-需要将<a href="https://model.baai.ac.cn/model-detail/100003">GLM-large-ch</a>模型下载到"./checkpoints/GLM-large-ch/"
+Download the GLM-large-ch model to "./checkpoints/GLM-large-ch/".
 
-将<a href="https://model.baai.ac.cn/model-detail/100078">AltDiffusion-m9</a>模型下载到"./checkpoints/AltDiffusion-m9/"
+Download the AltDiffusion-m9 model to "./checkpoints/AltDiffusion-m9/".
 
-# 步骤：
+# Steps:
 
-  1. selenium登录京东账号 
+1. Selenium login to the JD account.
 
-  2. 跳转待评价页面 
+2. Jump to the page to be evaluated.
 
-  3. 获取商品标题 
+3. Get the product title.
 
-  4. 使用flagai生成评价文字和图片 
-  
-    * 4.1 生成评价文字 ，使用GLM-large-ch模型
-    
-    * 4.2 生成图片，使用AltDiffusion-m9模型
-    
-  5. 提交 
+4. Generate evaluation text and images using FlagAI.
 
-  6. 进入下一个商品，循环2.
+   * 4.1 Generate evaluation text using the GLM-large-ch model.
 
+   * 4.2 Generate images using the AltDiffusion-m9 model.
 
-# Requirements 
+5. Submit.
+
+6. Enter the next product and repeat step 2.
+
+# Requirements
 
 pip install flagai
 
-# 使用
-双击运行 run.bat
+# Usage
+Double click on run.bat to run.
