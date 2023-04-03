@@ -51,8 +51,13 @@ class ListView(QVBoxLayout):
         self.list_widget = QListWidget(parent=parent)
         self.addWidget(self.list_widget)
 
-        for i in range(1, 11):
-            item = ListItem(i, f"Product {i}", parent=self.list_widget)
+        titles = ["惠寻 京东自有品牌 抽绳垃圾袋45只自动收口加厚塑料袋大号垃圾桶袋",
+                "怡宝纯净水1.555L*12瓶/箱大瓶饮用水泡茶整箱",
+                "【系列自选】新年过年啦绘本系列 绘本欢乐中国年中华传统节日故事绘本阅读我们的新年",
+                "雅诗兰黛绒雾哑光唇膏420#轻奢玫情色口红化妆品礼盒护肤品套装生日礼物"]
+                
+        for i in range(1, len(titles)):
+            item = ListItem(i, titles[i], parent=self.list_widget)
             list_item = QListWidgetItem(self.list_widget)
             list_item.setSizeHint(item.sizeHint())
             self.list_widget.setItemWidget(list_item, item)
@@ -67,7 +72,7 @@ class MainWindow(QWidget):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent=parent)
         self.setWindowTitle("Login")
-        self.resize(300, 200)
+        self.resize(1000, 800)
 
         self.login_layout = Login(parent=self)
         self.list_view = ListView(parent=self)
@@ -95,12 +100,14 @@ class MainWindow(QWidget):
         self.list_view.update()
         
     def comment(self):
-        texts = ["惠寻 京东自有品牌 抽绳垃圾袋45只自动收口加厚塑料袋大号垃圾桶袋",
-                "雅诗兰黛绒雾哑光唇膏420#轻奢玫情色口红化妆品礼盒护肤品套装生日礼物"]
-        for t in texts:
-            comments = self.predictor.comments_gen(t)
-            print(t)
-            print(comments)
+        for i in range(self.list_view.list_widget.count()):
+            item_widget = self.list_view.list_widget.itemWidget(self.list_view.list_widget.item(i))
+            title = item_widget.name_label.text()
+            status = item_widget.select_box.currentText()
+            statusBool = True if item_widget.select_box.currentText() == "Positive" else False
+            print(f"商品名称：{title}，选中状态：{status}, {statusBool}")
+            comments = self.predictor.comments_gen(title,statusBool)
+            print("\n\t评语：\n",comments)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
