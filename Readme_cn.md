@@ -24,7 +24,7 @@
   
     * 4.1 生成评价文字 ，使用GLM-large-ch模型
     
-    * 4.2 生成图片，使用AltDiffusion-m9模型
+    * 4.2 生成图片，使用AltDiffusion-m9模型（未实现，显存需要较大）
     
   5. 提交 
 
@@ -34,6 +34,8 @@
 # Requirements 
 
 pip install flagai
+
+pip install pyppeteer
 
 # 使用
 双击运行 run.bat
