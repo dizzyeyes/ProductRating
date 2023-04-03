@@ -4,6 +4,10 @@
 
 本项目使用智源的FlagAI模型，使用商品连接中的标题，生成一段正面或者负面的评价。
 
+# 前提：
+需要将GLM-large-ch模型下载到"./checkpoints/GLM-large-ch/"
+将AltDiffusion-m9模型下载到"./checkpoints/AltDiffusion-m9/"
+
 # 步骤：
 
   1. selenium登录京东账号 
@@ -16,7 +20,7 @@
   
     * 4.1 生成评价文字 ，使用GLM-large-ch模型
     
-    * 4.2 生成图片，使用altDiffusion模型
+    * 4.2 生成图片，使用AltDiffusion-m9模型
     
   5. 提交 
 
