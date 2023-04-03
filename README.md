@@ -24,7 +24,7 @@ Download the <a href="https://model.baai.ac.cn/model-detail/100078">AltDiffusion
 
    * 4.1 Generate evaluation text using the GLM-large-ch model.
 
-   * 4.2 Generate images using the AltDiffusion-m9 model.
+   * 4.2 Generate images using the AltDiffusion-m9 model.(not implemented)
 
 5. Submit.
 
@@ -33,6 +33,8 @@ Download the <a href="https://model.baai.ac.cn/model-detail/100078">AltDiffusion
 # Requirements
 
 pip install flagai
+
+pip install pyppeteer
 
 # Usage
 Double click on run.bat to run.
