@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QListWidget, QListWidgetItem, QComboBox
-from Comments import comments_gen
+import Comments as co
 
 class Login(QVBoxLayout):
     def __init__(self, parent=None):
@@ -81,6 +81,7 @@ class MainWindow(QWidget):
         self.login_layout.refresh_button.clicked.connect(self.refresh)
         self.login_layout.comment_button.clicked.connect(self.comment)
         self.setLayout(self.main_layout)
+        self.predictor = co.TextComment()
 
     def login(self):
         username = self.login_layout.username_edit.text()
@@ -97,7 +98,7 @@ class MainWindow(QWidget):
         texts = ["惠寻 京东自有品牌 抽绳垃圾袋45只自动收口加厚塑料袋大号垃圾桶袋",
                 "雅诗兰黛绒雾哑光唇膏420#轻奢玫情色口红化妆品礼盒护肤品套装生日礼物"]
         for t in texts:
-            comments = comments_gen(t)
+            comments = self.predictor.comments_gen(t)
             print(t)
             print(comments)
 
